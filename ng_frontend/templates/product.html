@@ -1,0 +1,49 @@
+<div ng-controller="ProductController">
+  <form name="productform">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Product Name</label>
+        <input ng-model="p.name" class="form-control" placeholder="Name" required="">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Product Price</label>
+        <input ng-model="p.price" class="form-control" placeholder="Price" required="">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Product Description</label>
+      <input ng-model="p.description" class="form-control" placeholder="Description" required="">
+    </div>
+    <button ng-disabled="productform.$invalid" ng-click="submitProduct(p)" class="btn btn-primary">Add New</button>
+  </form>
+  </br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="p in products">
+        <th scope="row">1</th>
+        <td>{{ p.name }}</td>
+        <td>{{ p.description }}</td>
+        <td>{{ p.price }}</td>
+      </tr>
+      </tr>
+    </tbody>
+  </table>
+    
+  <!--<div ng-repeat="p in products"></br>
+    <div class="card">
+      <div class="card-body">
+        <p>name: <strong>{{ p.name }}</strong></p>
+        <p>description: <strong>{{ p.description }}</strong></p>
+        <p>price: <strong>{{ p.price }}</strong></p>          
+      </div>
+    </div>
+  </div>-->
+</div>

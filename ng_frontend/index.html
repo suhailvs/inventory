@@ -3,24 +3,34 @@
     <head>
         <meta charset="utf-8">
         <title>Angular Sample - Retail Application</title>
-
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         <!--  Angular Setup -->
-        <script src="bower_components/angular.js"></script>
-        <script src="bower_components/angular-ui-router.js"></script>
-        <script src="bower_components/angular-resource.js"></script>
+        <script src="lib/angular.js"></script>
+        <script src="lib/angular-ui-router.js"></script>
+        <script src="lib/angular-resource.js"></script>
 
         <!-- Application Setup -->
-        <script src="appRoutes.js"></script>
-        <script src="app.js"></script>
+        <script src="js/app.js"></script>
 
         <!--  Controllers -->
-        <script src="components/retail/controllers/retail.control.js"></script>
-
-        <script src="components/retail/services/product.service.js"></script>
+        <script src="js/product.control.js"></script>
+        <script src="js/service.js"></script>
 
     </head>
     <body>
         <!-- The dynamic templates will be served within this div -->
-        <ui-view></ui-view>
+
+    <div class="container"> 
+        </br>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="product">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="invoice">New Invoice</a>
+          </li>
+        </ul>
+        <div style="padding: 30px"> <ui-view></ui-view></div>
+    </div>
     </body>
 </html>
