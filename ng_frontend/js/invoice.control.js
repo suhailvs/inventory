@@ -1,11 +1,11 @@
 retail
-    .controller('InvoiceController', function($scope, Product) {
+    .controller('InvoiceController', function($scope, Product,Invoice) {
 	$scope.date = new Date();
 	$scope.selectedProducts = [];
-        Product.query().$promise.then(function(data) {
-            $scope.products = data;
-        });
-        $scope.addProduct = function() {
+    Product.query().$promise.then(function(data) {
+      $scope.products = data;
+    });
+    $scope.addProduct = function() {
 	 var newitem = new Object();
 	 newitem.id = $scope.Filtered[0].id;
 	 newitem.name= $scope.Filtered[0].name;
@@ -27,19 +27,14 @@ retail
 	 };	 
 	 $scope.invoice.net = $scope.sum($scope.selectedProducts, 'total');
 	}
-
 	 	 
-        $scope.createInvoice = function() {
-	 var newinvoice = new Object();
-	 newinvoice.customer = "customer";
-	 newinvoice.total = "net amount";
-	 newinvoice.items = {'1':3,'2':1}; // key = product_id, value = qty
-	 // var invoice = new Invoice({
-	 //  customer: inv.cust, items: [{p.id,p.qty},..],total,inv.total});
-	 // product.$save(function(){
-	 //  refresh page
-	 // });
-	 alert (newinvoice.items['1']);
+    $scope.createInvoice = function() {
+    	alert($scope.selectedProducts);
+     var invoice = new Invoice({
+     customer:$scope.invoice.custname,total:$scope.invoice.net,items:$scope.selectedProducts});//{'1':3,'2':1} });
+     invoice.$save(function(){
+     	alert('save invoice');
+     })
 	}
 	 	 
 });

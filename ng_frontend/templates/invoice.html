@@ -63,11 +63,11 @@
 <div class="horizontal-space"></div>
 <div class="input-group">
   <div class="input-group-prepend">
-	  <span class="input-group-text">Net: {{ invoice.net }}</span>
+	  <span class="input-group-text">Net {{ invoice.net }}</span>
   </div>
   <input type="text" class="form-control" aria-label="Paid" ng-model="paid">
   <div class="input-group-append">
-	  <span class="input-group-text">Balance:{{ paid - invoice.net }}</span>
+	  <span class="input-group-text">Balance {{ paid - invoice.net }}</span>
   </div>
 </div>
 <div class="horizontal-space"></div>
