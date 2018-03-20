@@ -22,6 +22,7 @@ angular
             name: 'invoice',
             url: '/invoice',
             templateUrl: '../templates/invoice.html',
+            controller: 'InvoiceController'
         });
 
     $urlRouterProvider.otherwise('/');

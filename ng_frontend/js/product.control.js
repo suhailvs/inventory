@@ -4,11 +4,13 @@ retail
             $scope.products = data;
         });
         $scope.submitProduct = function(p) {
-        	alert(p.name);
+        	//alert(p.name);
 		    var product = new Product({
 		    	name: p.name,description:p.description,price:p.price});
 		    product.$save(function(){
 		      $scope.products.unshift(product);
+			$scope.p={};
+
 		    })
 		}
 });

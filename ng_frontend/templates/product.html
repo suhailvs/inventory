@@ -1,49 +1,46 @@
 <div ng-controller="ProductController">
-  <form name="productform">
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label>Product Name</label>
-        <input ng-model="p.name" class="form-control" placeholder="Name" required="">
+    <div class="widget">
+      <div class="widget-header bordered-bottom bordered-pink">
+          <span class="widget-caption">Product</span>
       </div>
-      <div class="form-group col-md-6">
-        <label>Product Price</label>
-        <input ng-model="p.price" class="form-control" placeholder="Price" required="">
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Product Description</label>
-      <input ng-model="p.description" class="form-control" placeholder="Description" required="">
-    </div>
-    <button ng-disabled="productform.$invalid" ng-click="submitProduct(p)" class="btn btn-primary">Add New</button>
-  </form>
-  </br>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="p in products">
-        <th scope="row">1</th>
-        <td>{{ p.name }}</td>
-        <td>{{ p.description }}</td>
-        <td>{{ p.price }}</td>
-      </tr>
-      </tr>
-    </tbody>
-  </table>
-    
-  <!--<div ng-repeat="p in products"></br>
-    <div class="card">
-      <div class="card-body">
-        <p>name: <strong>{{ p.name }}</strong></p>
-        <p>description: <strong>{{ p.description }}</strong></p>
-        <p>price: <strong>{{ p.price }}</strong></p>          
+      <div class="widget-body">            
+        <form class="form-horizontal" name="productform">
+            <div class="row">
+                <div class="col-md-6">
+                    <input placeholder="Name" class="form-control" ng-model="p.name" required="">
+                    <div class="horizontal-space"></div>
+                </div>
+                <div class="col-md-6">
+                    <input placeholder="Price" class="form-control" ng-model="p.price" required="">
+                    <div class="horizontal-space"></div>
+                </div>
+            </div>
+            <textarea class="form-control" rows="3" placeholder="Description" ng-model="p.description" required=""></textarea>
+            <div class="horizontal-space"></div>
+            <div>
+                <button ng-disabled="productform.$invalid" ng-click="submitProduct(p)" class="btn btn-default">Add New</button>
+            </div>
+        </form>
+            <div class="horizontal-space"></div>
+        <table class="table table-hover table-bordered table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="p in products">
+		    <th scope="row">{{ $index + 1}}</th>
+              <td>{{ p.name }}</td>
+              <td>{{ p.description }}</td>
+              <td>{{ p.price }}</td>
+            </tr>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </div>-->
 </div>
