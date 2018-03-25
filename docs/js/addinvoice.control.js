@@ -1,5 +1,5 @@
 retail
-    .controller('InvoiceController', function($scope, Product,Invoice) {
+    .controller('addInvoiceController', function($scope, Product,Invoice) {
 	$scope.date = new Date();
 	$scope.selectedProducts = [];
     Product.query().$promise.then(function(data) {

@@ -19,11 +19,22 @@ angular
             controller: 'ProductController'
         })
         .state({
+            name: 'invoices',
+            url: '/invoices',
+            templateUrl: '../templates/invoices.html',
+            controller: 'InvoicesController'
+        })
+	.state({
             name: 'invoice',
-            url: '/invoice',
+            url: '/invoice/:id',
             templateUrl: '../templates/invoice.html',
             controller: 'InvoiceController'
+        })
+        .state({
+            name: 'addinvoice',
+            url: '/addinvoice',
+            templateUrl: '../templates/addinvoice.html',
+            controller: 'addInvoiceController'
         });
-
     $urlRouterProvider.otherwise('/');
 }]);

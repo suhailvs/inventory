@@ -20,8 +20,9 @@
         <!--  Controllers -->
         <script src="js/service.js"></script>
         <script src="js/product.control.js"></script>
-        <script src="js/invoice.control.js"></script>
+        <script src="js/invoices.control.js"></script>
         
+        <script src="js/addinvoice.control.js"></script>
 
     </head>
     <body>
@@ -34,7 +35,11 @@
             <a class="nav-link" ui-sref-active="active" ui-sref="product">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" ui-sref-active="active" ui-sref="invoice">New Invoice</a>
+            <a class="nav-link" ui-sref-active="active" ui-sref="addinvoice">New Invoice</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="invoices">Invoices</a>
           </li>
         </ul>
         <div style="padding: 30px"> <ui-view></ui-view></div>
