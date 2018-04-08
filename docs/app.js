@@ -15,25 +15,25 @@ angular
         .state({
             name: 'product',
             url: '/',
-            templateUrl: '../templates/product.html',
+            templateUrl: 'templates/product.html',
             controller: 'ProductController'
         })
         .state({
             name: 'invoices',
             url: '/invoices',
-            templateUrl: '../templates/invoices.html',
+            templateUrl: 'templates/invoices.html',
             controller: 'InvoicesController'
         })
 	.state({
             name: 'invoice',
             url: '/invoice/:id',
-            templateUrl: '../templates/invoice.html',
+            templateUrl: 'templates/invoice.html',
             controller: 'InvoiceController'
         })
         .state({
             name: 'addinvoice',
             url: '/addinvoice',
-            templateUrl: '../templates/addinvoice.html',
+            templateUrl: 'templates/addinvoice.html',
             controller: 'addInvoiceController'
         });
     $urlRouterProvider.otherwise('/');

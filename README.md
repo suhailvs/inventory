@@ -34,17 +34,19 @@ $ chmod 777 db.sqlite3
 + Edit apache config :
 
 ```
-$ vim /etc/apache2/sites-enabled/000-default.conf
+$ vim /etc/apache2/sites-available/inventory.conf
 
-Listen 8010
-<VirtualHost *:8010>
+Listen 80
+<VirtualHost *:80>
 
+    ServerName ng.helpservice.xyz
     <Directory /var/www/inventory/dj_backend/dj_backend>
         <Files wsgi.py>
             Require all granted
         </Files>
     </Directory>
 
+    Alias /ng /var/www/inventory/docs
     ErrorLog /var/www/inventory/error.log
     WSGIDaemonProcess inventoryapp python-home=/var/www/inventory/tenv python-path=/var/www/inventory/dj_backend
     WSGIProcessGroup inventoryapp
@@ -53,4 +55,13 @@ Listen 8010
 
 ```
 
++ enable site: `a2ensite inventory.conf` 
 + restart apache: `service apache2 reload`
+
++ Optional: HTTPS Secure Apache with Let's Encrypt
+
+```
+$ add-apt-repository ppa:certbot/certbot
+$ apt-get update
+$ apt-get install python-certbot-apache
+$ certbot --apache -d helpservice.xyz

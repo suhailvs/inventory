@@ -1,7 +1,7 @@
 retail
     .factory('Product', function($resource) {
-        return $resource('http://ng.helpservice.xyz:8010/products/:id/');
+        return $resource('http://ng.helpservice.xyz/products/:id/');
     })
     .factory('Invoice', function($resource) {
-        return $resource('http://ng.helpservice.xyz:8010/invoice/:id/');
+        return $resource('http://ng.helpservice.xyz/invoice/:id/');
     });
