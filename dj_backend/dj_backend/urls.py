@@ -21,3 +21,5 @@ urlpatterns = [
     path('', include('products.urls')),
     path('', include('invoice.urls')),
 ]
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()

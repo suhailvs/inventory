@@ -25,7 +25,7 @@ SECRET_KEY = 'gsz4@9=d(i$!#ne!4%!u+r4_88t-^4+hh!i&l5m3@#dh1@w+mn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'dj_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR,'media','db.sqlite3'),
     }
 }
 
